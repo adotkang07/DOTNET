@@ -8,7 +8,6 @@ namespace WebAPIDemo.Models
 
         public string Title { get; set; }
 
-        public string MainCharacter { get; set; }
 
         public DateTime ReleaseDate { get; set; }
 
