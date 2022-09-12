@@ -13,12 +13,20 @@ namespace WebAPIDemo.Controllers
       
         // GET api/<CustomersController>
         [HttpGet]
-        public async Task<IActionResult> GetMovies()
+        public async Task<IActionResult> Get()
         {
 
             return Ok(DisneyMovieService.DisneyMovies);
         }
 
+        // GET api/<CustomersController>/id
+        [HttpGet("id")]
+        public async Task<IActionResult> Get(int id)
+        {
+            var movie = DisneyMovieService.DisneyMovies.Where(x => x.Id == id);
+            return Ok(movie);
+        }
+            
         // POST api/<CustomersController>
         [HttpPost]
         public async Task<IActionResult> AddMovie(DisneyMovieModel disneyMovie)
